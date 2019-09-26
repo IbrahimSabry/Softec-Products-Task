@@ -24,7 +24,13 @@ export class CustomerService {
       this.customersSource.next(this.customers);
     });
   }
-  getCustomer = (customerId: number) : Customer => {
-    return this.customers[this.customers.findIndex(u => u.Id == customerId)];
+  getCustomer = (customerId: number): Customer => {
+    let customer: Customer;
+    customer = this.customers[this.customers.findIndex(u => u.Id == customerId)];
+    if (!customer) {
+      customer = new Customer;
+      customer.Name = "Not found !!";
+    }
+    return customer;
   }
 }

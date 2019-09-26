@@ -27,4 +27,9 @@ export class ProductService {
     this.products[this.products.findIndex(u => u.ProductId == productId)].AvailablePieces = quantity;
     this.productsSource.next(this.products);
   }
+  getProduct = (productId: number): Product => {
+    let product = this.products[this.products.findIndex(u => u.ProductId == productId)];
+
+    return product;
+  }
 }
