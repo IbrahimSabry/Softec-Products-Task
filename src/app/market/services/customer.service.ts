@@ -20,7 +20,7 @@ export class CustomerService {
 
   getCustomers = () => {
     this.http.get<Customer[]>(environment.baseUrl + 'Users.json').subscribe(customers => {
-      this.customers = customers.sort((one, two) => (one.Id > two.Id ? -1 : 1));
+      this.customers = customers;
       this.customersSource.next(this.customers);
     });
   }

@@ -1,0 +1,97 @@
+
+
+/* ----- Variables ----- */
+$color-primary: #303030;
+$color-secondary: #535353;
+$color-highlight: #ff3f40;
+
+
+h3 {
+	font-size: 1em;
+	letter-spacing: 1.2px;
+	color: $color-secondary;
+}
+/* ----- Product Section ----- */
+.product {
+	display: grid;
+	grid-template-columns: 0.9fr 1fr;
+	margin: auto;
+	padding: 2.5em 0;
+	min-width: 400px;
+	background-color: white;
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* ----- Photo Section ----- */
+.product__photo {
+	position: relative;
+}
+
+.photo-container {
+	position: absolute;
+	left: -2.5em;
+	display: grid;
+	grid-template-rows: 1fr;
+	width: 100%;
+	height: 85%;
+	border-radius: 6px;
+	box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+.photo-main {
+	border-radius: 6px;
+	background-color: #c2185b;
+	background: radial-gradient(#ecacc6, #c2185b);
+
+	.controls {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.8em;
+		color: #fff;
+
+		i {
+			cursor: pointer;
+		}
+	}
+
+	img {
+		position: absolute;
+		max-width: 100%;
+		filter: saturate(150%) contrast(120%) hue-rotate(10deg)
+			drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+	}
+}
+
+
+/* ----- Informations Section ----- */
+.product__info {
+	padding: 0.8em 0;
+}
+
+.title {
+	h1 {
+		margin-bottom: 0.1em;
+		color: $color-primary;
+		font-size: 1.5em;
+		font-weight: 900;
+	}
+}
+
+.price {
+	margin: 1.5em 0;
+	color: $color-highlight;
+	span {
+		font-size: 2em;
+	}
+}
+
+.description {
+	clear: left;
+	margin: 2em 0;
+
+	h2 {
+		margin-bottom: 1em;
+	}
+
+}

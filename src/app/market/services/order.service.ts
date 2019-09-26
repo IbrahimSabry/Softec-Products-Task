@@ -20,7 +20,7 @@ export class OrderService {
 
   getOrders = () => {
     this.http.get<Order[]>(environment.baseUrl + 'Orders.json').subscribe(orders => {
-      this.orders = orders.sort((one, two) => (one.OrderId > two.OrderId ? -1 : 1));
+      this.orders = orders;
       this.ordersSource.next(this.orders);
     });
   }

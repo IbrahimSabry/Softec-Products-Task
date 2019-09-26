@@ -19,7 +19,7 @@ export class ProductService {
 
   getProducts = () => {
     this.http.get<Product[]>(environment.baseUrl + 'Products.json').subscribe(products => {
-      this.products = products.sort((one, two) => (one.ProductId > two.ProductId ? -1 : 1));
+      this.products = products;
       this.productsSource.next(this.products);
     });
   }

@@ -1,1 +1,34 @@
-<p>products works!</p>
+
+
+  <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let product of products">
+        <section class="product">
+            <div class="product__photo">
+                <div class="photo-container">
+                    <div class="photo-main">
+                        <div class="controls">
+                            <i class="material-icons">share</i>
+                            <i class="material-icons">favorite_border</i>
+                        </div>
+                        <img [src]="product.ProductImg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="product__info">
+                <div class="title">
+                    <h1>{{product.ProductName}}</h1>
+                </div>
+                <div class="price">
+                    <span>{{product.ProductPrice | currency: 'EGP'}}</span>
+                </div>
+                <div class="description">
+                    <h3>Available Pieces: {{product.AvailablePieces}}</h3>
+                </div>
+                <button mat-raised-button color="primary">ADD TO CART</button>
+
+            </div>
+        </section>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+ 
