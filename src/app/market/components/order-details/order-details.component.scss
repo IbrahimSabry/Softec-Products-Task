@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  
+  td {
+    font-size: 15px;
+  }
+
+  th {
+    font-size: 17px;
+  }
+}
+@media (max-width: 40em) {
+    .hide-xs {
+    display: none;
+    }
+  }
+  @media (min-width: 40em) {
+    .hide-lg {
+    display: none;
+    }
+  }  

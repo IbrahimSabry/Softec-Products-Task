@@ -7,11 +7,13 @@ import { SharedModule } from '../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MarketInterceptorService } from './services/httpInterceptor';
 import { OrdersComponent } from './components/orders/orders.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     OrdersComponent,
+    OrderDetailsComponent,
     ],
   imports: [
     SharedModule,

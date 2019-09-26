@@ -1,12 +1,14 @@
 <mat-form-field>
     <input matInput (keyup)="search($event.target.value)" placeholder="Search">
   </mat-form-field>
-  
+  <div class="actions">
+    <h5>Click on the Order Id to show the order details</h5>
+  </div>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="OrderId">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Id </th>
-        <td mat-cell *matCellDef="let row"> {{row.OrderId}} </td>
+        <td mat-cell *matCellDef="let row"> <a mat-button [routerLink]="['/Orders/',row.OrderId]" color="accent">{{row.OrderId}}</a></td>
       </ng-container>
 
       <ng-container matColumnDef="CustomerName" >

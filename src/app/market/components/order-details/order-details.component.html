@@ -1,0 +1,53 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Order Number {{order.OrderId}} Details</mat-card-title>
+    <mat-card-subtitle>{{order.OrderDate | date}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <br>
+      <div>
+        <Label>Customer Name: {{order.Customer.Name}}</Label></div>
+      <div>
+        <Label>Email: {{order.Customer.Email}}</Label></div>
+      <div>
+        <Label>Phone: {{order.Customer.Phone}}</Label></div>
+      <div>
+        <Label>Address: {{order.Customer.Address}}</Label></div>
+      <div>
+        <Label>Registration Date: {{order.Customer.RegisterDate | date}}</Label></div>
+    </div><br>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="ProductImg">
+          <th mat-header-cell *matHeaderCellDef> Product Image </th>
+          <td mat-cell *matCellDef="let row"> <img style="width:100px;" [src]="row.ProductImg"></td>
+        </ng-container>
+        <ng-container matColumnDef="ProductName">
+          <th mat-header-cell *matHeaderCellDef> Product Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.ProductName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ProductPrice">
+          <th mat-header-cell *matHeaderCellDef class="hide-xs"> Product Price </th>
+          <td mat-cell *matCellDef="let row" class="hide-xs"> {{row.ProductPrice | currency:" EGP "}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Quantity">
+          <th mat-header-cell *matHeaderCellDef class="hide-xs"> Quantity </th>
+          <td mat-cell *matCellDef="let row" class="hide-xs"> {{row.Quantity}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <p style="float: right">
+      Total Price Is {{order.TotalPrice | currency:" EGP "}} Paid {{order.PaymentType}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="button" [routerLink]="['/Orders']">
+      <mat-icon>cancel</mat-icon> <label> Back </label>
+    </button>
+  </mat-card-actions>
+</mat-card>
