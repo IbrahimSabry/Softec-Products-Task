@@ -7,7 +7,7 @@ Market Application as an interview task for Frontend Engineer position
 
  Market Application is small app to show all the products available to start make orders from them.
  
- * you can show all avaiable products with prices
+ * you can show all available products with prices
  * you can update the quantity of the under limits products
  * you can show all orders saved in the system with total prices
  * you can navigate to any order details page to show products, Customer Details & order details
