@@ -1,32 +1,30 @@
 <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Products</mat-card-title>
-          <mat-card-subtitle class="warning">The quantities with yellow color it under the limit</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Products</mat-card-title>
+        <mat-card-subtitle class="warning">The quantities with yellow color it under the limit</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)">
+            <mat-grid-tile *ngFor="let product of products">
+                <mat-card class="product-card">
+                    <mat-card-header>
+                        <mat-card-title>{{product.ProductName}}</mat-card-title>
+                        <mat-card-subtitle>{{product.ProductPrice | currency: 'EGP'}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image [src]="product.ProductImg" alt="product photo">
+                    <mat-card-content>
 
-<mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)">
-    <mat-grid-tile *ngFor="let product of products">
-        <mat-card class="product-card">
-            <mat-card-header>
-                <mat-card-title>{{product.ProductName}}</mat-card-title>
-                <mat-card-subtitle>{{product.ProductPrice | currency: 'EGP'}}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image [src]="product.ProductImg" alt="product photo">
-            <mat-card-content>
-                    
-            </mat-card-content>
-            <mat-card-actions >
-                    Available : 
-                    <mat-form-field style="width:25%" [class.low]="product.AvailablePieces <= 5">
-                        <input matInput [(ngModel)]="product.AvailablePieces" maxlength="5" type="number" min="0">
-                    </mat-form-field>
-                    <button mat-raised-button color="primary" (click)="SaveQuantity(product)">Save</button>
-            </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
-
-</mat-card-content>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        Available :
+                        <mat-form-field style="width:25%" [class.low]="product.AvailablePieces <= 5">
+                            <input matInput [(ngModel)]="product.AvailablePieces" maxlength="5" type="number" min="0">
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" (click)="updateQuantity(product)">Save</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
 </mat-card>

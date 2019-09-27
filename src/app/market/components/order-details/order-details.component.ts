@@ -33,12 +33,12 @@ export class OrderDetailsComponent implements OnInit {
       this.router.navigateByUrl('/Orders');
     }
   }
+  
   getOrder = () =>{
     this.orderService.ordersSource.subscribe(orders => {
       if (orders.length) {
         this.order = orders.find(u => u.OrderId == this.order.OrderId);
         this.dataSource = new MatTableDataSource(this.order.Products);
-
         console.log(this.order);
       }
       else {

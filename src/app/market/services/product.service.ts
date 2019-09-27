@@ -29,7 +29,6 @@ export class ProductService {
   }
   getProduct = (productId: number): Product => {
     let product = this.products[this.products.findIndex(u => u.ProductId == productId)];
-
     return product;
   }
 }

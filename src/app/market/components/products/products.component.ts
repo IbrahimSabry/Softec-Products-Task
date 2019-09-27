@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
     this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 4;
     this.rowHeight = (event.target.innerWidth <= 400) ? '2:2.5' : '2:3';
   }
-  SaveQuantity = (product: Product) => {
+  updateQuantity = (product: Product) => {
     this.productService.editProductQuantity(product.ProductId,product.AvailablePieces);
     this.snackBar.open("Quantity Updated Successfully", "OK");
 
