@@ -10,14 +10,14 @@ import { Product } from '../../models/productDTO';
 })
 export class ProductsComponent implements OnInit {
   products = new Array<Product>();
-  breakpoint:number;
+  breakpoint: number;
   rowHeight: string;
   constructor(public productService: ProductService, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getProducts();
-    this.breakpoint = (window.innerWidth <= 400) ? 1 : 2;
-    this.rowHeight = (window.innerWidth <= 400) ? '2:2.5' : '2:1.5';
+    this.breakpoint = (window.innerWidth <= 400) ? 1 : 4;
+    this.rowHeight = (window.innerWidth <= 400) ? '2:2.5' : '2:3';
   }
 
   getProducts = () => {
@@ -25,9 +25,14 @@ export class ProductsComponent implements OnInit {
       this.products = result;
     });
   }
-  onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 2;
-    this.rowHeight = (event.target.innerWidth <= 400) ? '2:2.5' : '2:1.5';
+  onResize = (event) => {
+    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 4;
+    this.rowHeight = (event.target.innerWidth <= 400) ? '2:2.5' : '2:3';
+  }
+  SaveQuantity = (product: Product) => {
+    this.productService.editProductQuantity(product.ProductId,product.AvailablePieces);
+    this.snackBar.open("Quantity Updated Successfully", "OK");
+
   }
 
 }

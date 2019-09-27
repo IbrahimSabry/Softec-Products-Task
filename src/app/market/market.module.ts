@@ -8,6 +8,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MarketInterceptorService } from './services/httpInterceptor';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
   imports: [
     SharedModule,
     MarketRoutingModule,
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: MarketInterceptorService, multi: true },
