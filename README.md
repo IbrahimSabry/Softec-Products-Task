@@ -1,27 +1,46 @@
-# SoftecProductsTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+# Softec Products App
 
-## Development server
+Market Application as an interview task for Frontend Engineer position
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Details
 
-## Code scaffolding
+ Market Application is small app to show all the products available to start make orders from them.
+ 
+ * you can show all avaiable products with prices
+ * you can update the quantity of the under limits products
+ * you can show all orders saved in the system with total prices
+ * you can navigate to any order details page to show products, Customer Details & order details
+ * the application is working with a fake api that retrieve data from Json files and make all operations in memory so If you click refresh your update will rollback
+ * the product list page has pagination and sorting and search
+ * A Full Responsive Application that can work on large and small screens.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation and running instructions
 
-## Build
+After Cloning the repo follow the bellow steps for installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1- Run `npm install` to install the required packages
 
-## Running unit tests
+2- Run `ng serve -o` for running the application on the dev server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Built With
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* [Angular](https://angular.io/docs) - The web framework used
+* [Angular Material](https://material.angular.io/) - Material Design components and the Angular
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Authors
+
+* **Ibrahim Sabry** - *Senior Frontend Engineer* 
+
+## Screenshots
+
+
+![List of Products](https://i.ibb.co/yVFtFfw/1.png)
+
+
+![List of Orders](https://i.ibb.co/CJ0XtYw/2.png)
+
+
+![Order Details](https://i.ibb.co/fpXQz38/3.png)
